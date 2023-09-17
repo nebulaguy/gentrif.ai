@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="https://kit.fontawesome.com/c979edd443.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/css; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gentrification </title>
+    <title>Gentrification</title>
 </head>
 <body>
     <header>
@@ -27,17 +27,12 @@
                         <input type="number" placeholder="Zip code" required>
                         <button type="submit" class="btn">Search</button>
                     </div>
-                    
                 </form>
             </div>
         </div>
     </header>
     <main>
-        <!-- Your main content goes here -->
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. R
-            erum id cupiditate voluptates laboriosam in asperiores dolore deb
-            itis facilis hic quae blanditiis at reiciendis non delectus, 
-            consequuntur autem nam quasi error.</p>
+        <div id="map" style="height: 400px;"></div> <!-- Provide an ID and set a height for the map -->
     </main>
     <footer>
         <!-- Your footer content goes here -->
@@ -48,7 +43,7 @@
             <div class="col">
                 <h3>Office <div class="underline"><span></span></div></h3>
                 <p>blacksburgh 24060</p>
-                <p>Virginia,USA </p>
+                <p>Virginia, USA</p>
                 <p class="email-id">NeighTrends@vt.edu</p>
                 <h4>+678 889889</h4>
             </div>
@@ -60,13 +55,14 @@
                     <li><a href="">About us</a></li>
                     <li><a href="">Features</a></li>
                     <li><a href="">Contacts</a></li>
+                </ul>
             </div>
             <div class="col">
                 <h3>Newsletter <div class="underline"><span></span></h3>
                 <form>
                     <i class="fa-regular fa-envelope"></i>
-                    <input type="newslettter" placeholder="Email ..." required>
-                    <button type="subcribes"><i class="fa-solid fa-arrow-right"></i></button>
+                    <input type="newsletter" placeholder="Email ..." required>
+                    <button type="subscribe"><i class="fa-solid fa-arrow-right"></i></button>
                 </form>
                 <div class="social-icons">
                     <i class="fa-brands fa-facebook"></i>
@@ -79,5 +75,19 @@
         <hr>
         <p class="copyright">© 2030 VT Hackathon. All Rights Reserved.</p>
     </footer>
+
+    <!-- Google Maps API script -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2GDdD1VZIjj8o64t3-s4689ftu8ELP_E&callback=initMap" async defer></script>
+
+    <!--JavaScript code for the map -->
+    <script>
+        function initMap() {
+            var blacksburgh = { lat: 37.2296, lng: -80.4139 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: blacksburgh
+            });
+        }
+    </script>
 </body>
 </html>
