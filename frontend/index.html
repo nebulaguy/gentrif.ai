@@ -29,9 +29,11 @@
                             <script
                                 src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 
+                            <form onsubmit="searchZip(event)">
                             <!-- Search bar and result display -->
-                            <input id="zip-search" placeholder="Enter ZIP code" type="text" />
-                            <button class="btn" onclick="searchZip()">Search</button>
+                                <input id="zip-search" placeholder="Enter ZIP code" type="text" />
+                                <button class="btn" onclick="searchZip()">Search</button>
+                            </form>
 
                             <script>let zipMap = {};
 
@@ -47,6 +49,8 @@
                                 });
 
                                 function searchZip() {
+                                    event.preventDefault();
+
                                     const zip = document.getElementById('zip-search').value;
                                     const resultElement = document.getElementById('result');
                                     if (zip in zipMap) {
@@ -83,8 +87,7 @@
         <div class="row">
             <div class="col">
                 <h3>gentrif.ai</h3>
-                <p text-align:center="">Our mission statement</p>
-                <p>What we can do about gentrification</p>
+                <p text-align:center="">Empowering communities with data-driven insights to predict and navigate gentrification for a balanced urban future.</p>
             </div>
             <div class="col">
                 <h3>Office<div class="underline"><span></span></div>
