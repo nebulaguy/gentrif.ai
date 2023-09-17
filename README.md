@@ -1,1 +1,1 @@
-# gentrif.ai
+# Gentrif.ai

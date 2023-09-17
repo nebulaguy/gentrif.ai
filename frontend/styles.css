@@ -1,0 +1,404 @@
+/* Reset default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(16, 20, 28);
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    padding: 10px 8%;
+}
+
+header {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.10s ease-in-out;
+}
+
+header:hover {
+    transform: translateY(-5px);
+}
+
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.container nav a {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Add styles for the "NeighTrends" logo */
+.container nav a:first-child {
+    border-radius: 50%; /* Make it round */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow */
+    padding: 10px 20px; /* Adjust padding as needed */
+    display: inline-block;
+}
+
+
+nav ul {
+    list-style: none;
+    width: 100%;
+    text-align: right;
+    padding-right: 50px;
+    margin: 0; 
+    padding: 0; /* Reset padding */
+}
+
+nav ul li {
+    display: inline-block;
+    color: #fff;
+    margin: 10px 20px;
+    text-decoration: none;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* Button Styles */
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 30px;
+    background-color: #0F9D58;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+.search-btn {
+    /* Your button styles here */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 30px;
+    background-color: #0F9D58;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+
+.content{
+    margin-top: 14%;
+    color: #fff;
+    max-width: 620px;
+}
+
+.content h1{
+    font-size:  60px;
+    font-weight: 600;
+    line-height: 85px;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.content form{
+    display: flex;
+    align-items: #fff;
+    background: #0F9D58;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.content form input{
+    border: 0;
+    outline: 0;
+    width: 100%;
+    color: #0F9D58;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.content form input .btn{
+    font-size: 15px;
+    padding: 10px 30px;
+}
+
+/*footer*/
+footer{
+    width: 100%;
+    bottom: 0;
+    background: linear gradient(to right, #00093c, #2d0b00);
+    color: #fff;
+    padding: 100px 0 30px;
+    border-top-left-radius: 125px;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.row{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+}
+
+.col:nth-chile(2), .col:nth-chile(2){
+    flex-basis:15;
+}
+
+.col h3{
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.email-id {
+    width: fit-content;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+ul li{
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.content form {
+    display: flex;
+    align-items: center; /* Center vertically */
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.content form input {
+    border: 0;
+    outline: 0;
+    flex-grow: 1; /* Allow the input to expand to fill available space */
+    font-size: 16px;
+    padding-left: 10px;
+    margin-right: 10px; /* Add margin to separate input and button */
+}
+
+.content form button {
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    margin-left: 10px; /* Add margin to separate input and button */
+}
+
+/* Adjust the icon size within the button */
+.content form button .fa-solid {
+    font-size: 16px;
+    color: #ccc;
+}
+
+social-icons .fa-brands{
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 0px;
+    color: #000;
+    background: #fff;
+    margin-right: 15px;
+}
+
+.social-icons {
+    margin-top: 30px; /* Adjust the value as needed to increase or decrease space */
+}
+
+.content form {
+    margin-top: 30px; /* Adjust the value as needed to create space */
+}
+
+hr{
+    width:90; 
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 20px auto;
+}
+
+.copyright{
+    text-align: center;
+}
+
+.underline{
+    width: 100%;
+    height: 5px;
+    background:#0F9D58;
+    position: absolute;
+    border-radius: 3px;
+    top: 25px;
+    left: 0;
+    overflow: hidden;
+}
+
+.underline span{
+    width: 15px;
+    height: 100%;
+    background:#580f9d;
+    position: absolute;
+    border-radius: 3px;
+    top: 0;
+    left: 10px;
+    animation: moving 2s linear infinite;
+}
+
+@keyframes moving{
+    0%{
+        left: -20px;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+@media (max-width: 700px){
+    footer{
+        bottom: unset;
+    }
+    .col{
+        flex-basis: 25%;
+    }
+    
+    .col:nth-chile(2), .col:nth-chile(2){
+        flex-basis:15;
+    }
+}
+
+.auto-resize-heading {
+    font-size: 2rem; /* Set an initial font size (adjust as needed) */
+    transition: font-size 0.5s; /* Add a transition for smooth resizing */
+}
+
+/* Apply larger font size when hovering over the heading */
+.auto-resize-heading:hover {
+    font-size: 3rem; /* Increase the font size on hover (adjust as needed) */
+}
+
+body {
+    overflow-y: scroll; /* Vertical scrollbar appears when content overflows */
+}
+
+/*button for search*/
+/* .search-btn {
+    background-color: #0F9D58;
+    color: #070e0b;
+} */
+
+/* Add the following CSS code to your external stylesheet or within a <style> block in your HTML file */
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-container input {
+    border: 0;
+    outline: 0;
+    width: 100%;
+    color: #0F9D58;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.search-container .btn {
+    background-color: #0F9D58;
+    color: white;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-left: 10px;
+}
+
+/* Add this to position the search button on the right */
+.search-container .btn {
+    margin-left: auto;
+}
+
+.toggle-button {
+    /* Add styles for the toggle button */
+    background-color: #0F9D58;
+    color: white;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    position: absolute;
+    right: 10px; /* Position the button on the right */
+}
+
+.content form input {
+    border: 0;
+    outline: 0;
+    width: 60%; /* Reduce the width of the input field */
+    color: black;
+    font-size: 16px;
+    padding-left: 10px;
+    margin-right: 10px; /* Add margin to separate input and button */
+}
+
+.content form button {
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    margin-left: 0; /* Remove the left margin */
+}
+
+/* Add margin to the search button to create space between input and button */
+.content form .btn {
+    margin-left: 10px;
+}
