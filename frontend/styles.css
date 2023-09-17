@@ -691,3 +691,14 @@ icon {
                pulse 2s 3s ease-out infinite;
     opacity: 0;
 }
+
+/* Center the content within the column */
+.col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%; /* Ensures vertical centering */
+    margin-bottom: 0px;
+    margin-top: 25px;
+}
