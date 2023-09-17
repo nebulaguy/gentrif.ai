@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="UTF-8">
@@ -7,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gentrification</title>
 </head>
+
 <body>
     <header>
         <!-- Your header content goes here -->
@@ -27,14 +29,16 @@
                         <input type="number" placeholder="Zip code">
                         <button type="submit" class="btn">Search</button>
                 </form>
-                    </div>
+            </div>
         </div>
     </header>
     <main>
         <div id="map" style="height: 0px;"></div> <!-- Provide an ID and set a height for the map -->
-        <div class = "googlemap">
-        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1KjvcVkdlmq91ZqXXeHoK06cpY5j9YUc&ehbc=2E312F" width="1000"  class="rounded-iframe" height="1000" style="border:0;" allowfullscreen="" loading = "lazy" ></iframe>
-    </div>
+        <div class="googlemap">
+            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1KjvcVkdlmq91ZqXXeHoK06cpY5j9YUc&ehbc=2E312F"
+                width="1000" class="rounded-iframe" height="1000" style="border:0;" allowfullscreen=""
+                loading="lazy"></iframe>
+        </div>
     </main>
     <footer>
         <!-- Your footer content goes here -->
@@ -45,7 +49,8 @@
                 <p>What we can do about gentrification</p>
             </div>
             <div class="col">
-                <h3>Office<div class="underline"><span></span></div></h3>
+                <h3>Office<div class="underline"><span></span></div>
+                </h3>
                 <p>Blacksburg, VA 24060</p>
                 <p>USA</p>
                 <p class="email-id">gentrif.ai@vt.edu</p>
@@ -63,11 +68,11 @@
             </div>
             <div class="col">
                 <h3>Newsletter <div class="underline"><span></span></h3>
-                    <form>
-                        <i class="fa-regular fa-envelope"></i>
-                        <input type="newsletter" placeholder="Email ..." required>
-                        <button type="subscribe"><i class="fa-solid fa-arrow-right"></i></button>
-                    </form>
+                <form>
+                    <i class="fa-regular fa-envelope"></i>
+                    <input type="newsletter" placeholder="Email ..." required>
+                    <button type="subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+                </form>
                 <div class="social-icons">
                     <p>Follow us on Linkedin!</p>
                     <i class="fa-brands fa-linkedin"></i>
@@ -91,5 +96,88 @@
             });
         }
     </script> -->
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>gentrif.ai</h2>
+            
+            <h3>Description:</h3>
+            <p>gentrif.ai is a Gentrification Prediction Model (GPM) - a cutting-edge tool designed to forecast areas
+                susceptible
+                to gentrification. By leveraging vast datasets and advanced machine learning techniques, gentrif.ai
+                aims to
+                identify urban regions on the cusp of rapid socio-economic change.</p>
+            
+            <h3>Why It's Better for Social Good:</h3>
+            <ul>
+                <li><strong>Informed Urban Planning:</strong> By predicting gentrification, city planners and
+                    + policymakers can make informed decisions to ensure equitable development, preserving the cultural
+                    + fabric of neighborhoods while still fostering growth.</li>
+                <li><strong>Affordable Housing:</strong> Early predictions allow for proactive measures to ensure
+                    + affordable housing remains available, preventing the displacement of long-term residents.</li>
+                <li><strong>Resource Allocation:</strong> Governments can allocate resources more efficiently,
+                    ensuring
+                    + that both new and old residents benefit from public goods and services.</li>
+                <li><strong>Community Engagement:</strong> By understanding potential gentrification trends, community
+                    leaders can engage in dialogue and planning to shape the future of their neighborhoods in
+                    inclusive
+                    ways.</li>
+            </ul>
+            
+            <h3>How It's Made:</h3>
+            <ol>
+                <ol><strong>Data Collection:</strong> The model ingests a wide range of data, including housing
+                    prices,
+                    income levels, demographic changes, public infrastructure developments, and more.</ol>
+                <ol><strong>Feature Engineering:</strong> Key indicators of gentrification are distilled from raw
+                    data,
+                    creating a set of features that the model can learn from.</ol>
+                <ol><strong>Machine Learning:</strong> Advanced algorithms are trained on historical data to recognize
+                    patterns associated with gentrification. The model is then validated and tested to ensure
+                    accuracy.
+                    </ol>
+                <ol><strong>Continuous Learning:</strong> As new data becomes available, the model is periodically
+                    retrained, ensuring that predictions remain accurate and relevant.</ol>
+                </ol>
+            <p></p>
+            <h3>Conclusion:</h3>
+            <p>gentrif.ai is not just a technical tool but a beacon for social justice. By
+                predicting and understanding gentrification, we can foster urban growth without sidelining the very
+                residents who made our cities vibrant in the first place. gentrif.ai stands as a testament to the power of
+                data and technology in serving the greater good.</p>
+
+        </div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.querySelector("nav ul li a[href='#']");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
+
 </html>
