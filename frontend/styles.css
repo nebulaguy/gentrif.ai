@@ -570,3 +570,8 @@ icon{
     opacity: 1;
     transition-delay: .5s;
 }
+
+.finalText {
+    color: white;
+    font-weight: bold;
+}
