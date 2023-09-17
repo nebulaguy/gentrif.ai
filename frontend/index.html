@@ -21,55 +21,55 @@
             </nav>
             <div class="flex-container">
                 <div class="content">
-                <h1 class="">Explore the Power of Gentrification Prediction</h1>
-                <form>
-                    <i class="fa-regular fa-envelope"></i>
-                    <div class="search-container">
-                        <!-- Include PapaParse -->
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+                    <h1 class="">Explore the Power of Gentrification Prediction</h1>
+                    <form>
+                        <i class="fa-regular fa-envelope"></i>
+                        <div class="search-container">
+                            <!-- Include PapaParse -->
+                            <script
+                                src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 
-                        <!-- Search bar and result display -->
-                        <input id="zip-search" placeholder="Enter ZIP code" type="text" />
-                        <button class="btn" onclick="searchZip()">Search</button>
-                        
-                        <script>let zipMap = {};
+                            <!-- Search bar and result display -->
+                            <input id="zip-search" placeholder="Enter ZIP code" type="text" />
+                            <button class="btn" onclick="searchZip()">Search</button>
 
-                            document.addEventListener("DOMContentLoaded", function () {
-                                fetch('../model/new_dataset_with_predictions.csv')
-                                    .then(response => response.text())
-                                    .then(csvString => {
-                                        const data = Papa.parse(csvString, { header: true }).data;
-                                        data.forEach(row => {
-                                            zipMap[row.RegionName] = row.predicted_gentrified;
+                            <script>let zipMap = {};
+
+                                document.addEventListener("DOMContentLoaded", function () {
+                                    fetch('../model/new_dataset_with_predictions.csv')
+                                        .then(response => response.text())
+                                        .then(csvString => {
+                                            const data = Papa.parse(csvString, { header: true }).data;
+                                            data.forEach(row => {
+                                                zipMap[row.RegionName] = row.predicted_gentrified;
+                                            });
                                         });
-                                    });
-                            });
-                            
-                            function searchZip() {
-                                const zip = document.getElementById('zip-search').value;
-                                const resultElement = document.getElementById('result');
-                                if (zip in zipMap) {
-                                    if (zipMap[zip] === "1") {
-                                        resultElement.textContent = "This area is gentrified.";
+                                });
+
+                                function searchZip() {
+                                    const zip = document.getElementById('zip-search').value;
+                                    const resultElement = document.getElementById('result');
+                                    if (zip in zipMap) {
+                                        if (zipMap[zip] === "1") {
+                                            resultElement.textContent = "This area is gentrified.";
+                                        } else {
+                                            resultElement.textContent = "This area is not gentrified.";
+                                        }
                                     } else {
-                                        resultElement.textContent = "This area is not gentrified.";
+                                        resultElement.textContent = "ZIP code not found in the dataset.";
                                     }
-                                } else {
-                                    resultElement.textContent = "ZIP code not found in the dataset.";
-                                }
-                            }</script>
-                    </div>
-                </form>
+                                }</script>
+                        </div>
+                    </form>
                 </div>
                 <header>
                     <h1 id="result"></h1>
                 </header>
-                
             </div>
         </div>
         <section class="header-down-arrow">
             <img src="downarrow.png" width="50">
-          </section>
+        </section>
     </header>
     <main>
         <div id="map" style="height: 0px;"></div>
@@ -89,37 +89,17 @@
             <div class="col">
                 <h3>Office<div class="underline"><span></span></div>
                 </h3>
-                <p>Blacksburg, VA 24060</p>
-                <p>USA</p>
-                <p class="email-id">gentrif.ai@vt.edu</p>
-                <h4>+1 (540)231-6000</h4>
+                <p>Blacksburg, VA, 24060, USA</p>
+                <p class="email-id">vrishank@vt.edu</p>
+                <p class="email-id">alexbrown26@vt.edu</p>
+                <p class="email-id">wesleysum0402@vt.edu</p>
             </div>
             <div class="col">
                 <h3>Links <div class="underline"><span></span></div>
                 </h3>
                 <ul>
                     <li><a href="">Home</a></li>
-                    <li><a href="">Service</a></li>
-                    <li><a href="">About us</a></li>
-                    <li><a href="">Features</a></li>
-                    <li><a href="">Contacts</a></li>
                 </ul>
-            </div>
-            <div class="col">
-                <h3>Newsletter <div class="underline"><span></span></div>
-                </h3>
-                <form>
-                    <i class="fa-regular fa-envelope"></i>
-                    <input type="newsletter" placeholder="Email ..." required>
-                    <button class="button">
-                        <Span class = "text">submit</Span>
-                        <i class="ri-check-line icon"></i>
-                    </button>
-                </form>
-                <div class="social-icons">
-                    <p>Follow us on Linkedin!</p>
-                    <i class="fa-brands fa-linkedin"></i>
-                </div>
             </div>
         </div>
         <hr />

@@ -90,7 +90,8 @@ nav ul li a {
     justify-content: center;
     align-items: center;
     width: 150px;
-    height: 40px; /* Slightly increased height for better visibility */
+    height: 40px;
+    /* Slightly increased height for better visibility */
     background-color: #0F9D58;
     color: white;
     font-weight: 500;
@@ -99,12 +100,15 @@ nav ul li a {
     outline: none;
     border-radius: 5px;
     cursor: pointer;
-    padding: 0 20px; /* Slightly increased padding for better readability */
-    transition: background-color 0.3s ease; /* Add a smooth hover effect */
+    padding: 0 20px;
+    /* Slightly increased padding for better readability */
+    transition: background-color 0.3s ease;
+    /* Add a smooth hover effect */
 }
 
 .btn:hover {
-    background-color: #0C8045; /* Darker green on hover */
+    background-color: #0C8045;
+    /* Darker green on hover */
 }
 
 
@@ -489,10 +493,9 @@ main {
 iframe {
     width: 80%;
     height: 500px;
-    /*filter: invert(30%);*/
 }
 
-/* The Modal (background) */
+
 .modal {
     display: none;
     /* Hidden by default */
@@ -580,11 +583,12 @@ a {
 }
 
 .close {
-    font-size: 32px; /* Bigger close button */
+    font-size: 32px;
+    /* Bigger close button */
 }
 
 /*button for news letter sub button*/
-.button{
+.button {
     position: relative;
     width: 70px;
     height: 30px;
@@ -598,7 +602,7 @@ a {
     border-radius .5s
 }
 
-.button *{
+.button * {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -606,11 +610,11 @@ a {
     transition: opacity .25s;
 }
 
-icon{
+icon {
     opacity: 0;
 }
 
-.button:focus{
+.button:focus {
     width: 30px;
     background-color: #0F9D58;
     border-radius: 50%;
@@ -623,4 +627,66 @@ icon{
 .button:focus .icon {
     opacity: 1;
     transition-delay: .5s;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    gap: 10%;           
+
+    
+}
+
+#result {
+    color: #ffffff;
+    display: flex;           /* Set the display to flex */
+    justify-content: center; /* Center content horizontally */
+    align-items: center;     /* Center content vertically */
+    height: 100%;  
+    
+}
+
+.header-down-arrow {
+    position: absolute;
+    bottom: 4vh;      /* Keeps the arrow 4% of viewport height from the bottom */
+    left: 50%;        /* Centers the arrow horizontally */
+    transform: translateX(-50%); /* Ensures perfect centering */
+    z-index: 10;
+}
+
+@keyframes fade-slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(4rem);
+    }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+}
+
+.header-down-arrow img {
+  animation: fade-slide-up 1s 1s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes pulse {
+    0% {
+      opacity: 1;
+      transform: none;
+    }
+    50% {
+      opacity: .8;
+      transform: scale(.8);
+    }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+}
+
+.header-down-arrow img {
+    animation: fade-slide-up 1s 1s ease-out forwards,
+               pulse 2s 3s ease-out infinite;
+    opacity: 0;
 }
