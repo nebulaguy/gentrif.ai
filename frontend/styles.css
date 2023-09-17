@@ -240,6 +240,38 @@ ul li a{
     cursor: pointer;
 }
 
+form input{
+    width: 100%;
+    background: transparent;
+    color: #ccc;
+    border: 0;
+    outline: none;
+}
+
+form button{
+    background: transparent;
+    border:0 ;
+    outline: none;
+    cursor: pointer;
+}
+
+form button .fa-arrow-right{
+    font-size: 16px;
+    color: #0F9D58;
+}
+
+.btn, .fa-solid {
+    background-color: #0F9D58;
+    color: white;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+
 /* Adjust the icon size within the button */
 .content form button .fa-solid {
     font-size: 16px;
@@ -397,8 +429,9 @@ body {
     margin-right: 10px; /* Add margin to separate input and button */
 }
 
-.content form button {
+form {
     background: transparent;
+    padding-bottom: 15px;
     border: 0;
     outline: none;
     cursor: pointer;
@@ -422,4 +455,18 @@ main {
     height: 200px; /* Set the height of the map */
     width: 100%; /* Set the width to 100% to make it responsive */
     margin-bottom: 20px; /* Add margin at the bottom to separate from the footer */
+}
+
+
+.googlemap {
+    width: 100%;
+    height: h;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.rounded-iframe {
+    border-radius: 20px;
 }

@@ -24,6 +24,7 @@
                 <form>
                     <i class="fa-regular fa-envelope"></i>
                     <div class="search-container">
+                        Left Aligned<br>
                         <input type="number" placeholder="Zip code">
                         <button type="submit" class="btn">Search</button>
                 </form>
@@ -32,6 +33,9 @@
     </header>
     <main>
         <div id="map" style="height: 400px;"></div> <!-- Provide an ID and set a height for the map -->
+        <div class = "googlemap">
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1KjvcVkdlmq91ZqXXeHoK06cpY5j9YUc&ehbc=2E312F" width="1000"  class="rounded-iframe" height="600" style="border:0;" allowfullscreen="" loading = "lazy" ></iframe>
+    </div>
     </main>
     <footer>
         <!-- Your footer content goes here -->
@@ -58,11 +62,11 @@
             </div>
             <div class="col">
                 <h3>Newsletter <div class="underline"><span></span></h3>
-                <form>
-                    <i class="fa-regular fa-envelope"></i>
-                    <input type="newsletter" placeholder="Email ..." required>
-                    <button type="subscribe"><i class="fa-solid fa-arrow-right"></i></button>
-                </form>
+                    <form>
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="newsletter" placeholder="Email ..." required>
+                        <button type="subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+                    </form>
                 <div class="social-icons">
                     <i class="fa-brands fa-facebook"></i>
                     <i class="fa-brands fa-twitter"></i>
@@ -76,10 +80,10 @@
     </footer>
 
     <!-- Google Maps API script -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2GDdD1VZIjj8o64t3-s4689ftu8ELP_E&callback=initMap" async defer></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2GDdD1VZIjj8o64t3-s4689ftu8ELP_E&callback=initMap" async defer></script> -->
 
     <!--JavaScript code for the map -->
-    <script>
+    <!-- <script>
         function initMap() {
             var blacksburg = { lat: 37.2296, lng: -80.4139 };
             var map = new google.maps.Map(document.getElementById('map'), {
@@ -87,6 +91,6 @@
                 center: blacksburg
             });
         }
-    </script>
+    </script> -->
 </body>
 </html>
