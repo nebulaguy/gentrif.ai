@@ -268,7 +268,6 @@ form button .fa-arrow-right{
     outline: none;
     border-radius: 5px;
     cursor: pointer;
-    padding: 10px 20px;
 }
 
 
@@ -278,20 +277,21 @@ form button .fa-arrow-right{
     color: #ccc;
 }
 
-social-icons .fa-brands{
+.social-icons .fa-brands {
     width: 60px;
     height: 60px;
     text-align: center;
-    line-height: 40px;
-    font-size: 0px;
-    color: #968383;
+    line-height: 60px;
+    font-size: 24px;
+    color: #ccc;
     background: #fff;
     margin-right: 15px;
 }
 
 .social-icons {
-    margin-top: 30px; /* Adjust the value as needed to increase or decrease space */
+    margin-top: 30px; /* Adjust the margin as needed */
 }
+
 
 .content form {
     margin-top: 30px; /* Adjust the value as needed to create space */
@@ -469,4 +469,10 @@ main {
 
 .rounded-iframe {
     border-radius: 20px;
+}
+
+iframe{
+    width: 80%;
+    height: 500px;
+    /*filter: invert(30%);*/
 }
