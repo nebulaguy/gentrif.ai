@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<link href="styles.css" rel="stylesheet" type="text/css"/>
+<meta charset="utf-8"/>
+<meta content="text/css; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gentrification</title>
+</head>
+<body>
+<header>
+<div class="container">
+<nav>
+<li><a href="#">gentrif.ai</a></li>
+<ul>
+<li><a href="#">About</a></li>
+</ul>
+</nav>
+<div class="content">
+<h1 class="">Explore the Power of Gentrification Prediction</h1>
+<form>
+<i class="fa-regular fa-envelope"></i>
+<div class="search-container">
+<!-- Include PapaParse -->
+
+<!-- Search bar and result display -->
+<input id="zip-search" placeholder="Enter ZIP code" type="text"/>
+<button class="btn" onclick="searchZip()">Search</button>
+
+<script>let zipMap = {};
+
+                            document.addEventListener("DOMContentLoaded", function () {
+                                fetch('../model/new_data_set_with_predictions.csv')
+                                    .then(response => response.text())
+                                    .then(csvString => {
+                                        const data = Papa.parse(csvString, { header: true }).data;
+                                        data.forEach(row => {
+                                            zipMap[row.RegionName] = row.predicted_gentrified;
+                                        });
+                                    });
+                            });
+
+                            function searchZip() {
+                                const zip = document.getElementById('zip-search').value;
+                                const resultElement = document.getElementById('result');
+                                if (zip in zipMap) {
+                                    if (zipMap[zip] === "1") {
+                                        resultElement.textContent = "This area is gentrified.";
+                                    } else {
+                                        resultElement.textContent = "This area is not gentrified.";
+                                    }
+                                } else {
+                                    resultElement.textContent = "ZIP code not found in the dataset.";
+                                }
+                            }</script>
+</div><p id="result"></p></form>
+</div>
+</div>
+</header>
+<main>
+<div id="map" style="height: 0px;"></div>
+<div class="googlemap">
+<iframe allowfullscreen="" class="rounded-iframe" height="1000" loading="lazy" src="https://www.google.com/maps/d/u/0/embed?mid=1KjvcVkdlmq91ZqXXeHoK06cpY5j9YUc&amp;ehbc=2E312F" style="border:0;" width="1000"></iframe>
+</div>
+</main>
+<footer>
+<div class="row">
+<div class="col">
+<h3>gentrif.ai</h3>
+<p text-align:center="">Our mission statement</p>
+<p>What we can do about gentrification</p>
+</div>
+<div class="col">
+<h3>Office<div class="underline"><span></span></div>
+</h3>
+<p>Blacksburg, VA 24060</p>
+<p>USA</p>
+<p class="email-id">gentrif.ai@vt.edu</p>
+<h4>+1 (540)231-6000</h4>
+</div>
+<div class="col">
+<h3>Links <div class="underline"><span></span></div></h3>
+<ul>
+<li><a href="">Home</a></li>
+<li><a href="">Service</a></li>
+<li><a href="">About us</a></li>
+<li><a href="">Features</a></li>
+<li><a href="">Contacts</a></li>
+</ul>
+</div>
+<div class="col">
+<h3>Newsletter <div class="underline"><span></span></div></h3>
+<form>
+<i class="fa-regular fa-envelope"></i>
+<input placeholder="Email ..." required="" type="newsletter"/>
+<button type="subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+</form>
+<div class="social-icons">
+<p>Follow us on Linkedin!</p>
+<i class="fa-brands fa-linkedin"></i>
+</div>
+</div>
+</div>
+<hr/>
+<p class="copyright">© 2023 VT Hackathon. All Rights Reserved.</p>
+</footer>
+<!-- Google Maps API script -->
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2GDdD1VZIjj8o64t3-s4689ftu8ELP_E&callback=initMap" async defer></script> -->
+<!--JavaScript code for the map -->
+<!-- <script>
+        function initMap() {
+            var blacksburg = { lat: 37.2296, lng: -80.4139 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: blacksburg
+            });
+        }
+    </script> -->
+<!-- Modal -->
+<div class="modal" id="myModal">
+<div class="modal-content">
+<span class="close">×</span>
+<h2>gentrif.ai</h2>
+<h3>Description:</h3>
+<p>gentrif.ai is a Gentrification Prediction Model (GPM) - a cutting-edge tool designed to forecast areas
+                susceptible
+                to gentrification. By leveraging vast datasets and advanced machine learning techniques, gentrif.ai
+                aims to
+                identify urban regions on the cusp of rapid socio-economic change.</p>
+<h3>Why It's Better for Social Good:</h3>
+<ul>
+<li><strong>Informed Urban Planning:</strong> By predicting gentrification, city planners and
+                    + policymakers can make informed decisions to ensure equitable development, preserving the cultural
+                    + fabric of neighborhoods while still fostering growth.</li>
+<li><strong>Affordable Housing:</strong> Early predictions allow for proactive measures to ensure
+                    + affordable housing remains available, preventing the displacement of long-term residents.</li>
+<li><strong>Resource Allocation:</strong> Governments can allocate resources more efficiently,
+                    ensuring
+                    + that both new and old residents benefit from public goods and services.</li>
+<li><strong>Community Engagement:</strong> By understanding potential gentrification trends, community
+                    leaders can engage in dialogue and planning to shape the future of their neighborhoods in
+                    inclusive
+                    ways.</li>
+</ul>
+<h3>How It's Made:</h3>
+<ol>
+<ol><strong>Data Collection:</strong> The model ingests a wide range of data, including housing
+                    prices,
+                    income levels, demographic changes, public infrastructure developments, and more.</ol>
+<ol><strong>Feature Engineering:</strong> Key indicators of gentrification are distilled from raw
+                    data,
+                    creating a set of features that the model can learn from.</ol>
+<ol><strong>Machine Learning:</strong> Advanced algorithms are trained on historical data to recognize
+                    patterns associated with gentrification. The model is then validated and tested to ensure
+                    accuracy.
+                </ol>
+<ol><strong>Continuous Learning:</strong> As new data becomes available, the model is periodically
+                    retrained, ensuring that predictions remain accurate and relevant.</ol>
+</ol>
+<p></p>
+<h3>Conclusion:</h3>
+<p>gentrif.ai is not just a technical tool but a beacon for social justice. By
+                predicting and understanding gentrification, we can foster urban growth without sidelining the very
+                residents who made our cities vibrant in the first place. gentrif.ai stands as a testament to the power
+                of
+                data and technology in serving the greater good.</p>
+</div>
+</div>
+<script>
+        var modal = document.getElementById("myModal");
+        var btn = document.querySelector("nav ul li a[href='#']");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

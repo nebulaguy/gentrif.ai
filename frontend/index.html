@@ -1,51 +1,89 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/css; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <meta charset="utf-8" />
+    <meta content="text/css; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Gentrification</title>
 </head>
 
 <body>
     <header>
-        <!-- Your header content goes here -->
         <div class="container">
             <nav>
                 <li><a href="#">gentrif.ai</a></li>
                 <ul>
                     <li><a href="#">About</a></li>
-                    <li><a href="#">Help</a></li>
                 </ul>
-                <button class="btn">Contact Us</button>
             </nav>
-            <div class="content">
-                <h1 class>Explore the Power of Gentrification Prediction</h1>
+            <div class="flex-container">
+                <div class="content">
+                <h1 class="">Explore the Power of Gentrification Prediction</h1>
                 <form>
                     <i class="fa-regular fa-envelope"></i>
                     <div class="search-container">
-                        <input type="number" placeholder="Zip code">
-                        <button type="submit" class="btn">Search</button>
+                        <!-- Include PapaParse -->
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+                        <!-- Search bar and result display -->
+                        <input id="zip-search" placeholder="Enter ZIP code" type="text" />
+                        <button class="btn" onclick="searchZip()">Search</button>
+                        
+                        <script>let zipMap = {};
+
+                            document.addEventListener("DOMContentLoaded", function () {
+                                fetch('../model/new_dataset_with_predictions.csv')
+                                    .then(response => response.text())
+                                    .then(csvString => {
+                                        const data = Papa.parse(csvString, { header: true }).data;
+                                        data.forEach(row => {
+                                            zipMap[row.RegionName] = row.predicted_gentrified;
+                                        });
+                                    });
+                            });
+                            
+                            function searchZip() {
+                                const zip = document.getElementById('zip-search').value;
+                                const resultElement = document.getElementById('result');
+                                if (zip in zipMap) {
+                                    if (zipMap[zip] === "1") {
+                                        resultElement.textContent = "This area is gentrified.";
+                                    } else {
+                                        resultElement.textContent = "This area is not gentrified.";
+                                    }
+                                } else {
+                                    resultElement.textContent = "ZIP code not found in the dataset.";
+                                }
+                            }</script>
+                    </div>
                 </form>
+                </div>
+                <header>
+                    <h1 id="result"></h1>
+                </header>
+                
             </div>
         </div>
+        <section class="header-down-arrow">
+            <img src="downarrow.png" width="50">
+          </section>
     </header>
     <main>
-        <div id="map" style="height: 0px;"></div> <!-- Provide an ID and set a height for the map -->
+        <div id="map" style="height: 0px;"></div>
         <div class="googlemap">
-            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1KjvcVkdlmq91ZqXXeHoK06cpY5j9YUc&ehbc=2E312F"
-                width="1000" class="rounded-iframe" height="1000" style="border:0;" allowfullscreen=""
-                loading="lazy"></iframe>
+            <iframe allowfullscreen="" class="rounded-iframe" height="1000" loading="lazy"
+                src="https://www.google.com/maps/d/u/0/embed?mid=1KjvcVkdlmq91ZqXXeHoK06cpY5j9YUc&amp;ehbc=2E312F"
+                style="border:0;" width="1000"></iframe>
         </div>
     </main>
     <footer>
-        <!-- Your footer content goes here -->
         <div class="row">
             <div class="col">
                 <h3>gentrif.ai</h3>
-                <p text-align:center>Our mission statement</p>
+                <p text-align:center="">Our mission statement</p>
                 <p>What we can do about gentrification</p>
             </div>
             <div class="col">
@@ -57,7 +95,8 @@
                 <h4>+1 (540)231-6000</h4>
             </div>
             <div class="col">
-                <h3>Links <div class="underline"><span></span></h3>
+                <h3>Links <div class="underline"><span></span></div>
+                </h3>
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="">Service</a></li>
@@ -67,10 +106,11 @@
                 </ul>
             </div>
             <div class="col">
-                <h3>Newsletter <div class="underline"><span></span></h3>
+                <h3>Newsletter <div class="underline"><span></span></div>
+                </h3>
                 <form>
                     <i class="fa-regular fa-envelope"></i>
-                    <input type="newsletter" placeholder="Email ..." required>
+                    <input placeholder="Email ..." required="" type="newsletter" />
                     <button type="subscribe"><i class="fa-solid fa-arrow-right"></i></button>
                 </form>
                 <div class="social-icons">
@@ -79,37 +119,20 @@
                 </div>
             </div>
         </div>
-        <hr>
-        <p class="copyright">© 2023 VT Hackathon. All Rights Reserved.</p>
+        <hr />
+        <p class="copyright">© 2023 VT Hacks. All Rights Reserved.</p>
     </footer>
 
-    <!-- Google Maps API script -->
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2GDdD1VZIjj8o64t3-s4689ftu8ELP_E&callback=initMap" async defer></script> -->
-
-    <!--JavaScript code for the map -->
-    <!-- <script>
-        function initMap() {
-            var blacksburg = { lat: 37.2296, lng: -80.4139 };
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 12,
-                center: blacksburg
-            });
-        }
-    </script> -->
-
-    <!-- Modal -->
-    <div id="myModal" class="modal">
+    <div class="modal" id="myModal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close">×</span>
             <h2>gentrif.ai</h2>
-            
             <h3>Description:</h3>
             <p>gentrif.ai is a Gentrification Prediction Model (GPM) - a cutting-edge tool designed to forecast areas
                 susceptible
                 to gentrification. By leveraging vast datasets and advanced machine learning techniques, gentrif.ai
                 aims to
                 identify urban regions on the cusp of rapid socio-economic change.</p>
-            
             <h3>Why It's Better for Social Good:</h3>
             <ul>
                 <li><strong>Informed Urban Planning:</strong> By predicting gentrification, city planners and
@@ -125,7 +148,6 @@
                     inclusive
                     ways.</li>
             </ul>
-            
             <h3>How It's Made:</h3>
             <ol>
                 <ol><strong>Data Collection:</strong> The model ingests a wide range of data, including housing
@@ -137,41 +159,32 @@
                 <ol><strong>Machine Learning:</strong> Advanced algorithms are trained on historical data to recognize
                     patterns associated with gentrification. The model is then validated and tested to ensure
                     accuracy.
-                    </ol>
+                </ol>
                 <ol><strong>Continuous Learning:</strong> As new data becomes available, the model is periodically
                     retrained, ensuring that predictions remain accurate and relevant.</ol>
-                </ol>
+            </ol>
             <p></p>
             <h3>Conclusion:</h3>
             <p>gentrif.ai is not just a technical tool but a beacon for social justice. By
                 predicting and understanding gentrification, we can foster urban growth without sidelining the very
-                residents who made our cities vibrant in the first place. gentrif.ai stands as a testament to the power of
+                residents who made our cities vibrant in the first place. gentrif.ai stands as a testament to the power
+                of
                 data and technology in serving the greater good.</p>
-
         </div>
     </div>
-
     <script>
-        // Get the modal
         var modal = document.getElementById("myModal");
-
-        // Get the button that opens the modal
         var btn = document.querySelector("nav ul li a[href='#']");
-
-        // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
 
-        // When the user clicks the button, open the modal 
         btn.onclick = function () {
             modal.style.display = "block";
         }
 
-        // When the user clicks on <span> (x), close the modal
         span.onclick = function () {
             modal.style.display = "none";
         }
 
-        // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";

@@ -21,7 +21,6 @@ body {
 header {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 50px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     padding: 10px 0;
     display: flex;
@@ -52,9 +51,12 @@ nav {
 
 /* Add styles for the "NeighTrends" logo */
 .container nav a:first-child {
-    border-radius: 50%; /* Make it round */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow */
-    padding: 10px 20px; /* Adjust padding as needed */
+    border-radius: 50%;
+    /* Make it round */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    /* Add shadow */
+    padding: 10px 20px;
+    /* Adjust padding as needed */
     display: inline-block;
 }
 
@@ -64,8 +66,9 @@ nav ul {
     width: 100%;
     text-align: right;
     padding-right: 50px;
-    margin: 0; 
-    padding: 0; /* Reset padding */
+    margin: 0;
+    padding: 0;
+    /* Reset padding */
 }
 
 nav ul li {
@@ -118,14 +121,14 @@ nav ul li a {
 }
 
 
-.content{
+.content {
     margin-top: 15%;
     color: #fff;
     max-width: 620px;
 }
 
-.content h1{
-    font-size:  60px;
+.content h1 {
+    font-size: 60px;
     font-weight: 600;
     line-height: 85px;
     margin-bottom: 25px;
@@ -158,13 +161,13 @@ nav ul li a {
     cursor: pointer;
 }
 
-.content form input .btn{
+.content form input .btn {
     font-size: 15px;
     padding: 10px 30px;
 }
 
 /*footer*/
-footer{
+footer {
     width: 100%;
     bottom: 0;
     background: linear gradient(to right, #00093c, #2d0b00);
@@ -175,7 +178,7 @@ footer{
     line-height: 20px;
 }
 
-.row{
+.row {
     width: 85%;
     margin: auto;
     display: flex;
@@ -184,16 +187,17 @@ footer{
     justify-content: space-between;
 }
 
-.col{
+.col {
     flex-basis: 25%;
     padding: 10px;
 }
 
-.col:nth-chile(2), .col:nth-chile(2){
-    flex-basis:15;
+.col:nth-chile(2),
+.col:nth-chile(2) {
+    flex-basis: 15;
 }
 
-.col h3{
+.col h3 {
     width: fit-content;
     margin-bottom: 40px;
     position: relative;
@@ -205,19 +209,20 @@ footer{
     margin: 20px 0;
 }
 
-ul li{
+ul li {
     list-style: none;
     margin-bottom: 12px;
 }
 
-ul li a{
+ul li a {
     text-decoration: none;
     color: white;
 }
 
 .content form {
     display: flex;
-    align-items: center; /* Center vertically */
+    align-items: center;
+    /* Center vertically */
     background: #fff;
     border-radius: 5px;
     padding: 10px;
@@ -227,10 +232,12 @@ ul li a{
 .content form input {
     border: 0;
     outline: 0;
-    flex-grow: 1; /* Allow the input to expand to fill available space */
+    flex-grow: 1;
+    /* Allow the input to expand to fill available space */
     font-size: 16px;
     padding-left: 10px;
-    margin-right: 10px; /* Add margin to separate input and button */
+    margin-right: 10px;
+    /* Add margin to separate input and button */
 }
 
 .content form button {
@@ -240,7 +247,7 @@ ul li a{
     cursor: pointer;
 }
 
-form input{
+form input {
     width: 100%;
     background: transparent;
     color: #ccc;
@@ -248,19 +255,20 @@ form input{
     outline: none;
 }
 
-form button{
+form button {
     background: transparent;
-    border:0 ;
+    border: 0;
     outline: none;
     cursor: pointer;
 }
 
-form button .fa-arrow-right{
+form button .fa-arrow-right {
     font-size: 16px;
     color: #0F9D58;
 }
 
-.btn, .fa-solid {
+.btn,
+.fa-solid {
     background-color: #0F9D58;
     color: white;
     font-weight: 500;
@@ -289,29 +297,31 @@ form button .fa-arrow-right{
 }
 
 .social-icons {
-    margin-top: 30px; /* Adjust the margin as needed */
+    margin-top: 30px;
+    /* Adjust the margin as needed */
 }
 
 
 .content form {
-    margin-top: 30px; /* Adjust the value as needed to create space */
+    margin-top: 30px;
+    /* Adjust the value as needed to create space */
 }
 
-hr{
-    width:90; 
+hr {
+    width: 90;
     border: 0;
     border-bottom: 1px solid #ccc;
     margin: 20px auto;
 }
 
-.copyright{
+.copyright {
     text-align: center;
 }
 
-.underline{
+.underline {
     width: 100%;
     height: 5px;
-    background:#0F9D58;
+    background: #0F9D58;
     position: absolute;
     border-radius: 3px;
     top: 25px;
@@ -319,10 +329,10 @@ hr{
     overflow: hidden;
 }
 
-.underline span{
+.underline span {
     width: 15px;
     height: 100%;
-    background:#580f9d;
+    background: #580f9d;
     position: absolute;
     border-radius: 3px;
     top: 0;
@@ -330,40 +340,47 @@ hr{
     animation: moving 2s linear infinite;
 }
 
-@keyframes moving{
-    0%{
+@keyframes moving {
+    0% {
         left: -20px;
     }
-    100%{
+
+    100% {
         left: 100%;
     }
 }
 
-@media (max-width: 700px){
-    footer{
+@media (max-width: 700px) {
+    footer {
         bottom: unset;
     }
-    .col{
+
+    .col {
         flex-basis: 25%;
     }
-    
-    .col:nth-chile(2), .col:nth-chile(2){
-        flex-basis:15;
+
+    .col:nth-chile(2),
+    .col:nth-chile(2) {
+        flex-basis: 15;
     }
 }
 
 .auto-resize-heading {
-    font-size: 2rem; /* Set an initial font size (adjust as needed) */
-    transition: font-size 0.5s; /* Add a transition for smooth resizing */
+    font-size: 2rem;
+    /* Set an initial font size (adjust as needed) */
+    transition: font-size 0.5s;
+    /* Add a transition for smooth resizing */
 }
 
 /* Apply larger font size when hovering over the heading */
 .auto-resize-heading:hover {
-    font-size: 3rem; /* Increase the font size on hover (adjust as needed) */
+    font-size: 3rem;
+    /* Increase the font size on hover (adjust as needed) */
 }
 
 body {
-    overflow-y: scroll; /* Vertical scrollbar appears when content overflows */
+    overflow-y: scroll;
+    /* Vertical scrollbar appears when content overflows */
 }
 
 /*button for search*/
@@ -378,6 +395,8 @@ body {
     align-items: center;
     position: relative;
 }
+
+
 
 .search-container input {
     border: 0;
@@ -416,17 +435,20 @@ body {
     cursor: pointer;
     padding: 10px 20px;
     position: absolute;
-    right: 10px; /* Position the button on the right */
+    right: 10px;
+    /* Position the button on the right */
 }
 
 .content form input {
     border: 0;
     outline: 0;
-    width: 60%; /* Reduce the width of the input field */
+    width: 60%;
+    /* Reduce the width of the input field */
     color: black;
     font-size: 16px;
     padding-left: 10px;
-    margin-right: 10px; /* Add margin to separate input and button */
+    margin-right: 10px;
+    /* Add margin to separate input and button */
 }
 
 form {
@@ -435,7 +457,8 @@ form {
     border: 0;
     outline: none;
     cursor: pointer;
-    margin-left: 0; /* Remove the left margin */
+    margin-left: 0;
+    /* Remove the left margin */
 }
 
 /* Add margin to the search button to create space between input and button */
@@ -446,15 +469,20 @@ form {
 main {
     display: flow;
     flex-direction: column;
-    align-items: center; /* Center the map horizontally */
-    padding: 50px; /* Add padding to separate the map from the footer */
+    align-items: center;
+    /* Center the map horizontally */
+    padding: 50px;
+    /* Add padding to separate the map from the footer */
 }
 
 /* Style the map container */
 #map {
-    height: 200px; /* Set the height of the map */
-    width: 100%; /* Set the width to 100% to make it responsive */
-    margin-bottom: 20px; /* Add margin at the bottom to separate from the footer */
+    height: 200px;
+    /* Set the height of the map */
+    width: 100%;
+    /* Set the width to 100% to make it responsive */
+    margin-bottom: 20px;
+    /* Add margin at the bottom to separate from the footer */
 }
 
 
@@ -471,34 +499,47 @@ main {
     border-radius: 20px;
 }
 
-iframe{
+iframe {
     width: 80%;
     height: 500px;
     /*filter: invert(30%);*/
 }
+
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
     font-family: 'San Francisco', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 /* Modal Content */
 .modal-content {
-    background-color: #333; /* Dark grey */
-    margin: 15% auto; /* 15% from the top and centered */
+    background-color: #333;
+    /* Dark grey */
+    margin: 15% auto;
+    /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 50%; /* Could be more or less, depending on screen size */
-    border-radius: 12px; /* Rounded corners */
-    color: #fff; /* White text */
+    width: 50%;
+    /* Could be more or less, depending on screen size */
+    border-radius: 12px;
+    /* Rounded corners */
+    color: #fff;
+    /* White text */
 }
 
 /* The Close Button */
@@ -520,24 +561,115 @@ iframe{
 }
 
 /* Global Styles */
-body, h1, h2, h3, h4, p, li, a {
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+a {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     margin-bottom: 20px;
 }
 
-p, li, a {
+p,
+li,
+a {
     margin-bottom: 15px;
 }
 
 /* Enhancing the modal styles */
 .modal-content {
-    padding: 30px; /* Increased padding */
+    padding: 30px;
+    /* Increased padding */
 }
 
 .close {
-    font-size: 32px; /* Bigger close button */
+    font-size: 32px;
+    /* Bigger close button */
+}
+
+/* Additional styles for search container and result display */
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    /* Aligns items vertically in the center */
+    gap: 20px;
+    /* Space between the search container and the result */
+}
+
+#result {
+    align-items: center;
+
+    margin-left: 25%;
+    color: #ffffff;
+    display: flex;
+    /* Set the display to flex */
+    justify-content: center;
+    /* Center content horizontally */
+    align-items: center;
+    /* Center content vertically */
+    height: 100%;
+}
+
+.header-down-arrow {
+    position: absolute;
+    bottom: 4vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+@keyframes fade-slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(4rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        transform: none;
+    }
+
+    50% {
+        opacity: .8;
+        transform: scale(.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.header-down-arrow img {
+    animation: fade-slide-up 1s 1s ease-out forwards;
+    opacity: 0;
+}
+
+.header-down-arrow img {
+    animation: fade-slide-up 1s 1s ease-out forwards,
+        pulse 2s 3s ease-out infinite;
+    opacity: 0;
 }
