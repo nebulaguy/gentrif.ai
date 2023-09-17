@@ -87,7 +87,7 @@ nav ul li a {
     justify-content: center;
     align-items: center;
     width: 150px;
-    height: 30px;
+    height: 40px; /* Slightly increased height for better visibility */
     background-color: #0F9D58;
     color: white;
     font-weight: 500;
@@ -96,25 +96,12 @@ nav ul li a {
     outline: none;
     border-radius: 5px;
     cursor: pointer;
-    padding: 10px 20px;
+    padding: 0 20px; /* Slightly increased padding for better readability */
+    transition: background-color 0.3s ease; /* Add a smooth hover effect */
 }
 
-.search-btn {
-    /* Your button styles here */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 150px;
-    height: 30px;
-    background-color: #0F9D58;
-    color: white;
-    font-weight: 500;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 10px 20px;
+.btn:hover {
+    background-color: #0C8045; /* Darker green on hover */
 }
 
 
@@ -540,4 +527,46 @@ p, li, a {
 
 .close {
     font-size: 32px; /* Bigger close button */
+}
+
+/*button for news letter sub button*/
+.button{
+    position: relative;
+    width: 70px;
+    height: 30px;
+    font-size: 10px;
+    background-color: #0F9D58;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: width .5s,
+    border-radius .5s
+}
+
+.button *{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity .25s;
+}
+
+icon{
+    opacity: 0;
+}
+
+.button:focus{
+    width: 30px;
+    background-color: #0F9D58;
+    border-radius: 50%;
+}
+
+.button:focus .text {
+    opacity: 0;
+}
+
+.button:focus .icon {
+    opacity: 1;
+    transition-delay: .5s;
 }
