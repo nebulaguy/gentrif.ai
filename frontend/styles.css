@@ -113,7 +113,7 @@ nav ul li a {
 
 
 .content {
-    margin-top: 15%;
+    margin-top: 6%;
     color: #fff;
     max-width: 620px;
 }
@@ -122,7 +122,7 @@ nav ul li a {
     font-size: 60px;
     font-weight: 600;
     line-height: 85px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     color: #fff;
 }
 
@@ -134,6 +134,7 @@ nav ul li a {
     border-radius: 5px;
     padding: 10px;
     margin-top: 30px;
+    width: fit-content;
 }
 
 .content form input {
@@ -627,4 +628,66 @@ icon {
 .button:focus .icon {
     opacity: 1;
     transition-delay: .5s;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    gap: 10%;           
+
+    
+}
+
+#result {
+    color: #ffffff;
+    display: flex;           /* Set the display to flex */
+    justify-content: center; /* Center content horizontally */
+    align-items: center;     /* Center content vertically */
+    height: 100%;  
+    
+}
+
+.header-down-arrow {
+    position: absolute;
+    bottom: 4vh;      /* Keeps the arrow 4% of viewport height from the bottom */
+    left: 50%;        /* Centers the arrow horizontally */
+    transform: translateX(-50%); /* Ensures perfect centering */
+    z-index: 10;
+}
+
+@keyframes fade-slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(4rem);
+    }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+}
+
+.header-down-arrow img {
+  animation: fade-slide-up 1s 1s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes pulse {
+    0% {
+      opacity: 1;
+      transform: none;
+    }
+    50% {
+      opacity: .8;
+      transform: scale(.8);
+    }
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+}
+
+.header-down-arrow img {
+    animation: fade-slide-up 1s 1s ease-out forwards,
+               pulse 2s 3s ease-out infinite;
+    opacity: 0;
 }
